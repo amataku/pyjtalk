@@ -1,0 +1,2 @@
+# pyjtalk
+OpenJtalk Python Wrapper
