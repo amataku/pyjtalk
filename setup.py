@@ -1,11 +1,12 @@
 from setuptools import setup, find_packages,Command
 from codecs import open
 from os import path
+import os
 import subprocess
 from distutils.command.build import build as _build
 
 
-INSTALL_COMMAND = 'sudo apt-get install -y open-jtalk-mecab-naist-jdic hts-voice-nitech-jp-atr503-m001 open-jtalk'
+INSTALL_COMMAND = os.path.join(os.path.dirname(__file__),'pyjtalk/build.sh')
 
 
 class build(_build):
@@ -24,7 +25,7 @@ class CustomCommands(Command):
 setup(
     name='pyjtalk',
 
-    version='1.0.9',
+    version='1.1.3',
 
     description='Open-Jtalk Python wrapper',
 
@@ -68,7 +69,7 @@ setup(
     entry_points={},
 
     cmdclass={
-        'build':build,
-        'CustomCommands':CustomCommands
+        #'build':build,
+        #'CustomCommands':CustomCommands
     }
 )
